@@ -16,4 +16,6 @@ Bearbeiten Sie bitte selbstständig folgende Aufgaben. Dazu müssen Sie die Para
 
 (4) Bedeutung des Haushaltseinkommens: Wird die Schätzung des Interventionseffekts beeinflusst von der Stärke des Einkommenseffekts b_X?
 
+(5) Bedeutung der funktionalen Form: Wird die Schätzung besser oder schlechter, wenn wir quadratische (order = 2) oder kubische (order = 3) statt linearer (order = 1) Trends benutzen?
+
 (Optional) Wenn Sie fertig sind, variieren Sie mehrere Parameter auf einmal und explorieren Sie die Interaktionen verschiedener Variablen!
