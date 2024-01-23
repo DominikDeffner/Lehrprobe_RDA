@@ -10,7 +10,7 @@ Bearbeiten Sie bitte selbstständig folgende Aufgaben. Dazu müssen Sie die Para
 
 (1) Bedeutung der Stichprobengröße: Variieren Sie systematisch "N" und beschreiben Sie, was das für die Schätzung des Interventionseffekts bedeutet.
 
-(2) Bedeutung das Cutoffs: Variieren Sie c0 im Intervall [-1.5, 1.5]. Hat der Cutoff einen Einfluss auf die Schätzung?
+(2) Bedeutung das Cutoffs: Variieren Sie c0 schrittweise zwischen -1 und 1. Hat der Cutoff einen Einfluss auf die Schätzung?
 
 (3) Bedeutung des Interventionseffekts: Wie groß muss der Interventionseffekt b_I sein, damit er in mindestens 95% der Fälle gefunden wird (bei N=200)?
 
