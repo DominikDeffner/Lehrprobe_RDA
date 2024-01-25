@@ -2,7 +2,7 @@
 
 Liebe Studierende, 
 
-hier finden Sie die begleitenden Aufgaben zur Regressions-Diskontinuitäts-Analyse. 
+hier finden Sie die Folien und begleitenden Aufgaben zur Regressions-Diskontinuitäts-Analyse. 
 
 Öffnen Sie das Skript "RDA_simulation" in R Studio und installieren Sie das Package "rdrobust" ("install.packages("rdrobust")" in der Konsole ausführen).
 
