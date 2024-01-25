@@ -18,6 +18,7 @@ c0 <- 0       #Cutoff Wert
 b_X <- 1      #Effekt von Haushaltseinkommen
 b_I <- 1      #Effekt der Intervention
 order = 1     #Funktionale Form der Regression (order = 1 bedeutet linear, order = 2 quadratisch, usw.)
+var_res = 1   #(Residual-)Varianz in Schulleistung, die nicht durch Einkommen oder die Intervention erklärt wird
 
 N_sim <- 100  #Anzahl unabhängiger Simulationen (mehr Simuationen führen zu schlechter Lesbarkeit des Plots)
 
@@ -30,20 +31,20 @@ b_I_CI <- matrix(NA, nrow = N_sim, ncol = 2)
 
 #Wiederhole für jede der N_sim Simulationen
 for (i in 1:N_sim) {
- print(i)
+  print(i)
   
-#Generiere Daten
-X <- rnorm(N)                   #Simuliere Haushaltseinkommen
-I <- ifelse(X < c0, 1, 0)       #Dummy Variable für Intervention
-Y <- rnorm(N,b_X*X + b_I*I, 1)  #Simuliere Schulleistung
-
-#Schätze LATE
-fit <- rdrobust(Y,X,c = c0,p=order, kernel = "tri",bwselect = "mserd")
-
-#Speichere Schätzung und Konfidenzintervalle
-b_I_est[i]   <- fit$Estimate[1]
-b_I_CI[i,1] <- fit$ci[3,1]
-b_I_CI[i,2] <- fit$ci[3,2]
+  #Generiere Daten
+  X <- rnorm(N)                         #Simuliere Haushaltseinkommen
+  I <- ifelse(X < c0, 1, 0)             #Dummy Variable für Intervention
+  Y <- rnorm(N,b_X*X + b_I*I, var_res)  #Simuliere Schulleistung
+  
+  #Schätze LATE
+  fit <- rdrobust(Y,X,c = c0,p=order, kernel = "tri",bwselect = "mserd")
+  
+  #Speichere Schätzung und Konfidenzintervalle
+  b_I_est[i]   <- fit$Estimate[1]
+  b_I_CI[i,1] <- fit$ci[3,1]
+  b_I_CI[i,2] <- fit$ci[3,2]
 }
 
 #Plot der Simulationsergebnisse
